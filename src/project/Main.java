@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    static final Scanner sc = new Scanner(System.in);
+    static final Scanner SC = new Scanner(System.in);
 
     public static void main(String[] args) {
         Operations c = new Operations();
@@ -16,12 +16,12 @@ public class Main {
         ResourceBundle rb = Main.languageOption(InputChoice(choice));
 
         System.out.println(rb.getString("choice"));
-        int option = sc.nextInt();
+        int option = SC.nextInt();
         int o = Main.InputOption(option ,rb);
 
         System.out.println(rb.getString("number"));
-        double n1 = sc.nextDouble();
-        double n2 = sc.nextDouble();
+        double n1 = SC.nextDouble();
+        double n2 = SC.nextDouble();
         double result = 0.0;
 
         switch (o) {
@@ -50,7 +50,7 @@ public class Main {
             if(choice != 0) {
                 System.out.println("Invalid input. Choose a correct option");
             }
-            choice = sc.nextInt();
+            choice = SC.nextInt();
         }while ((choice < 1 || choice > 2));
 
         return choice;
@@ -59,7 +59,7 @@ public class Main {
     private static int InputOption(int option, ResourceBundle rb){
         while ((option < 1 || option > 4)){
             System.out.println(rb.getString("error"));
-            option = sc.nextInt();
+            option = SC.nextInt();
         }
         return option;
     }
